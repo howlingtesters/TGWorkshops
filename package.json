@@ -1,0 +1,46 @@
+{
+  "name": "workshop-cursor-playwright-starter",
+  "version": "1.0.0",
+  "description": "Starter pakiet warsztatu Cursor + Playwright (instalacja + lokalny SUT + smoke test)",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare": "husky",
+    "server": "node server/server.cjs",
+    "test": "npx playwright test",
+    "test:smoke": "npx playwright test tests/smoke.spec.ts",
+    "lint": "npx eslint .",
+    "format": "npx prettier --write .",
+    "format:check": "npx prettier --check ."
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.31.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "playwright": "^1.63.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^25.9.8",
+    "@typescript-eslint/eslint-plugin": "^8.71.0",
+    "@typescript-eslint/parser": "^8.71.0",
+    "eslint": "^10.11.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.12.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.0",
+    "prettier": "^3.9.9",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.3"
+  }
+}
